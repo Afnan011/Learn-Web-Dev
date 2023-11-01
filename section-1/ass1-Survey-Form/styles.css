@@ -4,6 +4,10 @@
   box-sizing: border-box;
 }
 
+body{
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
 main {
   width: 100vw;
   display: flex;

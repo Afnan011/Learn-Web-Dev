@@ -17,7 +17,7 @@ body{
 }
 
 nav{
-    width: 29%;
+    width: 20%;
     height: 100vh;
     position: fixed;
     overflow-y: auto;
@@ -50,9 +50,9 @@ header{
 }
 
 main{
-    width: 70%;
+    width: 80%;
     margin: 10px;
-    margin-left: 30%;
+    margin-left: 22%;
     overflow: hidden;
     text-align: left;
 }

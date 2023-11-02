@@ -15,6 +15,10 @@ main{
     height: 100%;
     margin: 20px auto;
     border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
 header{
@@ -33,7 +37,7 @@ header p{
 }
 
 figure{
-    width: 95%;
+    width: 90%;
     background-color: #ffffff;
     padding: 10px;
     display: flex;
@@ -46,16 +50,6 @@ figure{
 figure img {
   display: block;
   max-width: 100%;
-}
-
-figure:hover{
-    scale: 1.05;
-    transition: 1s ease-in-out;
-}
-
-figure:hover::after{
-    scale: 1.05;
-    transition: 1s ease-in-out;
 }
 
 section{

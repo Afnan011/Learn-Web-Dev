@@ -4,17 +4,21 @@
   box-sizing: border-box;
 }
 
+html{
+  font-size: 14px;
+}
+
 body{
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 main {
-  width: 100vw;
+  width: 100%;
+  height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
-
   background: #1b1b32;
   background-image: linear-gradient(
       115deg,
@@ -27,39 +31,64 @@ main {
   background-repeat: no-repeat;
 }
 
-form {
-  background-color: rgb(27, 27, 50, 0.7);
-  color: white;
-  width: 80%;
-  max-width: 800px;
-  box-shadow: 2px 2px 5px #1b1b32;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  overflow: auto;
-}
-
-fieldset {
-  border: none;
-  margin: 2rem 2rem;
-  max-width: 500px;
-  padding: 5px;
-}
-
-fieldset input {
-  padding: 5px;
-  margin: 5px 0px;
+header{
+  text-align: center;
 }
 
 h1 {
-  font-size: 34px;
+  font-size: 3.1rem;
   font-weight: 800;
   padding: 15px;
 }
 
 p {
   padding-bottom: 10px;
+}
+
+form {
+  background-color: rgb(27, 27, 50, 0.7);
+  color: white;
+  width: 80%;
+  max-width: 800px;
+  margin: 20px;
+  padding: 10px;
+  box-shadow: 2px 2px 5px #1b1b32;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+fieldset {
+  border: none;
+  margin: 0 auto 2rem;
+  padding: 5px;
+  width: 90%;
+  font-size: 1.1rem;
+  text-align: left;
+}
+
+fieldset input, label, select{
+  padding: 5px;
+  margin: 5px 0px;
+  display: inline-block;
+}
+
+.info input{
+  width: 50%;
+  text-align: left;
+  font-size: 1.1rem;
+}
+
+.info label {
+  width: 30%;
+  min-width: 55px;
+  text-align: right;
+}
+
+fieldset select{
+  font-size: 1.1rem;
+  font-weight: 500;
 }
 
 .submit-container {
@@ -70,7 +99,7 @@ p {
 }
 
 #submit {
-  font-size: 18px;
+  font-size: 1.5rem;
   background-color: #37af65;
   color: #f3f3f3;
   width: 60%;
@@ -81,15 +110,28 @@ p {
   cursor: pointer;
 }
 
-input[type="number"] {
-  width: 150px;
+.indent{
+  margin-left: 30px;
 }
-
-select {
-  padding: 5px;
-}
-
 
 textarea{
   resize: none;
+  height: 7rem;
+  width: 20rem;
+}
+
+@media only screen and (max-width: 600px) {
+  html{
+    font-size: 10px;
+  }
+
+  main{
+    height: 100vh;
+  }
+
+  textarea{
+    height: 7rem;
+    width: 20rem;
+  }
+  
 }

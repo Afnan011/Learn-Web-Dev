@@ -48,6 +48,16 @@ figure img {
   max-width: 100%;
 }
 
+figure:hover{
+    scale: 1.05;
+    transition: 1s ease-in-out;
+}
+
+figure:hover::after{
+    scale: 1.05;
+    transition: 1s ease-in-out;
+}
+
 section{
     display: flex;
     justify-content: center;

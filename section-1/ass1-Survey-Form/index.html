@@ -10,13 +10,15 @@
 
 <body>
     <main>
-        <h1 id="title">freeCodeCamp Survey Form</h1>
-    <p id="description">Thank you for taking the time to help us improve the platform</p>
+        <header>
+            <h1 id="title">freeCodeCamp Survey Form</h1>
+            <p id="description">Thank you for taking the time to help us improve the platform</p>
+        </header>
 
 
     <form id="survey-form">
         <section>
-            <fieldset>
+            <fieldset class="info">
                 <label for="name" id="name-label">Name</label>
                 <input type="text" id="name" placeholder="Enter your name" required><br>
     
@@ -42,37 +44,37 @@
     
             <fieldset>
                 <legend>Would you recommend freeCodeCamp to a friend?</legend>
-                <input type="radio" name="recommend" id="radio1" value="Definitely">
+                <input type="radio" class="indent"  name="recommend" id="radio1" value="Definitely">
                 <label for="radio1">Definitely</label>
     
-                <input type="radio" name="recommend" id="radio2" value="maybe">
+                <input type="radio" class="indent"  name="recommend" id="radio2" value="maybe">
                 <label for="radio2">Maybe</label>
     
-                <input type="radio" name="recommend" id="radio3" value="notsure">
+                <input type="radio" class="indent"  name="recommend" id="radio3" value="notsure">
                 <label for="radio3">Not Sure</label>
             </fieldset>
     
             <fieldset>
                 <legend>What would you like to see improved? (Check all that apply)</legend>
-                <input type="checkbox" value="1" id="chk1">
+                <input class="indent" type="checkbox" value="1" id="chk1">
                 <label for="chk1">Front-end Projects</label><br>
     
-                <input type="checkbox" value="2" id="chk2">
+                <input class="indent" type="checkbox" value="2" id="chk2">
                 <label for="chk2">Back-end Projects</label><br>
     
-                <input type="checkbox" value="3" id="chk3">
+                <input class="indent" type="checkbox" value="3" id="chk3">
                 <label for="chk3">FullStack Projects</label><br>
     
-                <input type="checkbox" value="3" id="chk4">
+                <input class="indent" type="checkbox" value="3" id="chk4">
                 <label for="chk4">Open Source Community</label><br>
     
-                <input type="checkbox" value="3" id="chk5">
+                <input class="indent" type="checkbox" value="3" id="chk5">
                 <label for="chk5">Videos</label><br>
             </fieldset>
     
             <fieldset>
                 <legend>Any comments or suggestions?</legend>
-                <textarea name="addcomm" id="addcomm" cols="50" rows="6"></textarea>
+                <textarea name="addcomm" id="addcomm"></textarea>
             </fieldset><br>
     
             <div class="submit-container">

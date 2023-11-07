@@ -2,25 +2,84 @@
 <html lang="en">
 
 <head>
-    <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="./styles.css">
+    <script src="https://kit.fontawesome.com/b391c5f026.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
     <nav id="navbar">
         <ul>
-            <li><a href="#projects">About</a></li>
+            <li><a href="#welcome-section">About</a></li>
             <li><a href="#projects">Work</a></li>
-            <li><a href="#projects">Contact</a></li>
+            <li><a href="#contact">Contact</a></li>
         </ul>
     </nav>
-    <a link href="https://github.com/afnan011/learn-web-dev" target="_blank" id="profile-link">
-        <section id="welcome-section">
-            <h1>Welcome to the game</h1>
+
+    <main class="flex">
+        <section id="welcome-section" class="flex">
+            <h1>Hey I am Afnan</h1>
+            <p><em>a web developer</em></p>
         </section>
-        <section id="projects">
-            <a href="#projects">projects</a>
-            <h1 class="project-tile">projects jdklsaf</h1>
+
+        <section id="projects" class="flex">
+            <header>
+                <h1>These are some of my projects</h1>
+            </header>
+
+            <div class="cards-container project-tile">
+                <div class="card">
+                    <a href="https://travel-website011.netlify.app/" target="_blank"><img src="./imgs/travel website.jpg" alt=""></a>
+                    <p>Travel Page</p>
+                </div>
+                <div class="card">
+                     <a href="https://afnan011-fcc-responsive-ass2.netlify.app/" target="_blank"><img src="./imgs/tribute webpage.jpg" alt=""></a>
+                    <p>Tribute Page</p>
+                </div>
+                <div class="card">
+                     <a href="https://afnan011-fcc-responsive-ass4.netlify.app/" target="_blank"><img src="./imgs/product-page.jpg" alt=""></a>
+                    <p>Product Page</p>
+                </div>
+                <div class="card">
+                    <a href="https://afnan011-fcc-responsive-ass1.netlify.app/" target="_blank"><img src="./imgs/survey formjpg.jpg" alt=""></a>
+                    <p>survey Form</p>
+                </div>
+                <div class="card">
+                     <a href="https://afnan011-fcc-responsive-magazine.netlify.app/" target="_blank"><img src="./imgs/magazine-page.jpg" alt=""></a>
+                    <p>Magazine Page</p>
+                </div>
+                <div class="card">
+                     <a href="https://afnan011-fcc-responsive-skyline.netlify.app/" target="_blank"><img src="./imgs/city-skyliner-css.jpg" alt=""></a>
+                    <p>City Skyliner</p>
+                </div>
+                <div class="card">
+                     <a href="https://afnan011-fcc-responsive-ass3.netlify.app/" target="_blank"><img src="./imgs/blog webpage.jpg" alt=""></a>
+                    <p>Technical Blog</p>
+                </div>
+            </div>
         </section>
+
+        <section id="contact" class="flex">
+            <div class="text">
+                <h1>Let's work together...</h1>
+                <p><i>You can contact us via</i></p>
+            </div>
+            <div class="social-links">
+                <i class="fa fa-facebook-square"><span><a link href="https://www.facebook.com/Afnan.nld" target="_blank" id="profile-link1">Facebook</a></span></i>
+                <i class="fa fa-github"><span><a link href="https://github.com/afnan011/learn-web-dev" target="_blank" id="profile-link2">GitHub</a></span></i>
+                <i class="fa fa-twitter"><span><a link href="https://github.com/afnan011/learn-web-dev" target="_blank" id="profile-link3">Twitter</a></span></i>
+                <i class="fa fa-envelope"><span><a link href="mailto:muhammedafnan8184@gmail.com" target="_blank" id="profile-link4">Send a Mail</a></span></i>
+                <i class="fa fa-mobile"><span><a link href="mailto:muhammedafnan8184@gmail.com" target="_blank" id="profile-link5">Call</a></span></i>
+            </div>  
+        </section>
+        <footer class="flex">
+            &copy; Copyright at Afnan. All rights reserved.
+        </footer>
+
+    </main>
 </body>
 
 </html>

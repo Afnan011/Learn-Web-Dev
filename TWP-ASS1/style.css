@@ -299,16 +299,29 @@ button:active
 }
 
 #why-us{
-    min-height: 50vh;
-    background: linear-gradient(0deg, rgba(9, 18, 66, 0.8), rgba(9, 18, 66, 0)),
-    url('./imgs/services-logo/container-bg-image.png');
-    /* background: linear-gradient(94deg, rgba(255, 182, 41, 0.4) -1.21%, rgba(255, 218, 86, 0.4) 58.66%, rgba(255, 215, 166, 0.4) 116.84%),
-    url('./imgs/services-logo/container-bg-image.png'); */
+    min-height: 120vh;
+    position: relative;
+  }
+
+#why-us .container-img{
+  height: 50vh;
+  background: linear-gradient(0deg, rgba(9, 18, 66, 0.8), rgba(9, 18, 66, 0)),
+  url('./imgs/services-logo/container-bg-image.png');
+}
+
+.card{
+  width: 60%;
+  height: 60%;
+  border: 1px solid red;
+  position: absolute;
+  top: 27%;
+  left: 20%;
 }
 
 
 #transport{
     min-height: 50vh;
+    background-color: #666c89;
 }
 
 @media screen and (max-width:600px) {

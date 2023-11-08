@@ -68,10 +68,12 @@ header .logo img {
 .nav-services {
     width: 50%;
     padding: 3rem;
+    justify-content: center;
+    align-items: center;
 }
 
 .nav-card {
-    min-width: 100px;
+    min-width: 80px;
     color: var(--color-white);
     text-align: left;
     flex-shrink: 0;
@@ -87,6 +89,8 @@ header .logo img {
 .nav-card p {
   flex-direction: column;
   padding: 5px;
+  justify-content: center;
+  align-items: center;
 }
 
 .nav-card p span {
@@ -332,6 +336,7 @@ button:active
 
     .nav-card{
       flex-shrink: 1;
+      margin-right: 5px;
     }
 
     .nav-social{

@@ -169,8 +169,9 @@ header nav ul li:last-child {
 .hero .sub-heading-above{
     background: rgba(4, 28, 55, 0.5);
 }
+
 .sub-heading-above {
-  font-size: 0.8rem;
+  font-size: 0.9rem;
   width: fit-content;
   padding: 2px;
 }
@@ -212,7 +213,6 @@ button{
 
 button:hover
 {
-  opacity: 1;
   background-color: #00EEE0;
   border: 1px #99ccff;
 }
@@ -241,11 +241,8 @@ button:active
 }
 
 .service-title{
-    font-size: 1.8rem;
-}
-
-.service-title h2{
-    width: 130%;
+    font-size: 1.6rem;
+    width: 30%;
 }
 
 .service-title .sub-heading-above{
@@ -345,6 +342,12 @@ button:active
         flex-direction: column;
         justify-content: center;
         gap: 3rem;
+    }
+    .service-title{
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
     }
 
     .service-content-container{

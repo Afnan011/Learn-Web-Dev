@@ -524,7 +524,7 @@ button:active {
   }
 
   #why-us{
-    height: 75vh;
+    height: 85vh;
   }
 
   #why-us .container-img {
@@ -533,7 +533,7 @@ button:active {
 
   .why-us-card {
     width: auto;
-    top: 15%;
+    top: 25%;
     left: 0;
     flex-direction: column-reverse;
     justify-content: center;

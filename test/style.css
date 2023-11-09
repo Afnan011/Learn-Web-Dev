@@ -1,0 +1,46 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.parent{
+    border: 10px solid cadetblue;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    
+}
+
+.box{
+    padding: 3rem;
+}
+
+
+.box1{
+    background-color: blueviolet;
+}
+
+.box2{
+    background-color: aqua;
+}
+
+.box3{
+    background-color: yellowgreen;
+}
+
+.box4{
+    background-color: tomato;
+}
+
+.box5{
+    background-color: violet;
+}
+
+.box6{
+    background-color: cornflowerblue;
+}
+
+.box7{
+    background-color: green;
+}
+

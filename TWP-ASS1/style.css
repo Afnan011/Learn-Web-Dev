@@ -219,7 +219,7 @@ button {
 
 button:hover {
   background-color: #00eee0;
-  border: 1px #99ccff;
+  border: 1px  #99ccff;
 }
 
 button:active {
@@ -400,7 +400,7 @@ button:active {
   width: 100%;
 }
 
-.counter-box{
+.counter-box {
   width: 55%;
   display: flex;
   justify-content: center;
@@ -442,7 +442,7 @@ button:active {
   line-height: normal;
 }
 
-.count p{
+.count p {
   font-size: 1.5rem;
   font-style: normal;
   font-weight: 500;
@@ -450,13 +450,122 @@ button:active {
 }
 
 #transport {
-  min-height: 50vh;
-  background-color: #666c89;
+  height: 90vh;
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+}
+
+.transport-bg {
+  width: 100%;
+  background: linear-gradient(
+    95deg,
+    #ffb629 -1.19%,
+    #ffda56 57.78%,
+    #ffd7a6 115.08%
+  );
+  z-index: -1;
+  position: absolute;
+  height: 50%;
+  top: 50%;
+}
+
+#transport h2 {
+  color: var(--color-primary);
+  text-align: center;
+  font-size: 2.5rem;
+  font-style: normal;
+  font-weight: 600;
+}
+
+.tc-gallary-container {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  column-gap: 1rem;
+}
+
+.transport-card {
+  height: 30rem;
+  width: 25rem;
+
+  background-position: center;
+  background-blend-mode: multiply;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-start;
+
+  padding: 1.5rem;
+  color: white;
+  font-style: normal;
+  line-height: normal;
+}
+
+.transport-card h3 {
+  font-family: "Rubik", sans-serif;
+  font-size: 1.25rem;
+  font-weight: 500;
+}
+
+.transport-card p {
+  color: #ffb629;
+  font-weight: 400;
+  line-height: 1.5rem;
+}
+
+.tc-card-1 {
+  background: linear-gradient(0deg, #091242 14.34%, rgba(60, 60, 60, 0) 43.86%),
+    url("./imgs/transport-section/liquid-transportation-logo.png");
+  background-size: cover;
+}
+
+.tc-card-2 {
+  background: linear-gradient(0deg, #091242 14.34%, rgba(60, 60, 60, 0) 43.86%),
+    url("./imgs/transport-section/packing.png");
+  background-size: cover;
+}
+
+.tc-card-3 {
+  background: linear-gradient(0deg, #091242 14.34%, rgba(60, 60, 60, 0) 43.86%),
+    url("./imgs/transport-section/truck.png");
+  background-size: cover;
+}
+
+.tc-card-4 {
+  background: linear-gradient(0deg, #091242 14.34%, rgba(60, 60, 60, 0) 43.86%),
+    url("./imgs/transport-section/wharehouse.png");
+  background-size: cover;
+}
+
+.tc-card-5 {
+  background: linear-gradient(0deg, #091242 14.34%, rgba(60, 60, 60, 0) 43.86%),
+    url("./imgs/transport-section/port.png");
+  background-size: cover;
+}
+
+.hidden {
+  display: block;
+}
+
+#transport button {
+  background: url(./imgs/transport-section/button-bgsvg.svg);
+  background-position: center;
+  background-size: cover;
+  color: var(--color-white);
+  width: 15rem;
 }
 
 @media screen and (max-width: 600px) {
   html {
     font-size: 52%;
+  }
+
+  .hidden {
+    display: none;
   }
 
   nav {
@@ -523,7 +632,7 @@ button:active {
     width: 100%;
   }
 
-  #why-us{
+  #why-us {
     height: 85vh;
   }
 
@@ -553,9 +662,36 @@ button:active {
     justify-content: flex-start;
   }
 
-  .counter-box{
+  .counter-box {
     width: 90%;
-
   }
+
+  #transport {
+    height: auto;
+    row-gap: 2rem;
+  }
+
+  .tc-gallary-container {
+    grid-template-columns: 1fr;
+  }
+
+  .transport-bg{
+    top: 2%;
+    height: 100%;
+    background: linear-gradient(
+      95deg,
+      rgba(255, 182, 41, 0.5) -1.19%,
+      rgba(255, 218, 86, 0.5) 57.78%,
+      rgba(255, 215, 166, 0.5) 115.08%
+    );
+  }
+
+  .transport-card {
+    height: 35rem;
+    width: 30rem;
+    margin: 1.5rem 0;
+  }
+
+
 
 }

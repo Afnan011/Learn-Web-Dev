@@ -295,7 +295,7 @@ button:active {
 }
 
 #why-us {
-  height: 120vh;
+  height: 90vh;
   position: relative;
 }
 
@@ -393,8 +393,6 @@ button:active {
 }
 
 .counter-section {
-  position: absolute;
-  bottom: 0;
   margin: 2rem 0;
   display: flex;
   justify-content: center;
@@ -526,7 +524,7 @@ button:active {
   }
 
   #why-us{
-    height: 95vh;
+    height: 75vh;
   }
 
   #why-us .container-img {

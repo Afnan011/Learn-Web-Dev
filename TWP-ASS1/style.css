@@ -421,12 +421,12 @@ button:active {
   gap: 1rem;
   align-items: center;
   padding: 3.5rem 3rem;
-  border: 1px solid rgba(212, 212, 212, 0.7);
+  border: 1px solid rgba(212, 212, 212, 0.8);
+  border-left: none;
 }
 
 .left-count {
   justify-content: flex-end;
-  border-left: none;
 }
 
 .right-count {

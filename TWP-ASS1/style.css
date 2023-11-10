@@ -714,7 +714,6 @@ button:active {
   width: 25rem;
 }
 
-
 .why-choose-right {
   /* border: 1px solid red; */
   background: var(--color-bg-white);
@@ -775,6 +774,7 @@ button:active {
   font-weight: 400;
   line-height: normal;
 }
+
 
 @media screen and (max-width: 600px) {
   html {
@@ -929,4 +929,36 @@ button:active {
   .test-card-title {
     width: auto;
   }
+
+  #why-choose{
+    flex-direction: column;
+  }
+
+  .why-choose-left{
+    width: 100%;
+  }
+
+  .why-choose-left div{
+    height: 25rem;
+    position: relative;
+    top: 0;
+    left: 0;
+    margin: 10px;
+  }
+
+  .why-choose-left div img{
+    width: 50%;
+    object-fit: cover;
+    position: absolute;
+    bottom: -10%;
+  }
+  
+  .why-choose-right{
+    width: 100%;
+    padding: 2rem 1rem;
+  }
+  .why-choose-text {
+    width: 80%;
+  }
+
 }

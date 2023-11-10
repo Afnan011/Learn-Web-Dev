@@ -855,7 +855,7 @@ button:active {
   width: 20px;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 768px) {
   html {
     font-size: 52%;
   }
@@ -1006,7 +1006,7 @@ button:active {
   }
 
   .test-card-title {
-    width: auto;
+    width: 105%;
   }
 
   #why-choose {

@@ -710,7 +710,7 @@ button:active {
   top: 20%;
 }
 
-.why-choose-left div img{
+.why-choose-left div img {
   width: 25rem;
 }
 
@@ -775,6 +775,85 @@ button:active {
   line-height: normal;
 }
 
+.our-expents-parent {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 5rem;
+}
+
+.our-expents-parent h2 {
+  color: var(--color-text-heading);
+  font-size: 2.3rem;
+  font-weight: 700;
+  line-height: normal;
+  text-align: center;
+  letter-spacing: 0.05rem;
+}
+
+.experts-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 3rem;
+}
+
+.expert-card {
+  position: relative;
+}
+
+.expert-card img {
+  width: 27rem;
+}
+
+.expert-card-footer {
+  background-color: rgba(28, 31, 53, 1);
+  min-height: 8rem;
+  margin-top: -3px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0 2.3rem;
+}
+
+.expert-card-footer h3 {
+  color: var(--color-white);
+  font-size: 1.25rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+.expert-card-footer p {
+  color: var(--color-bg-white);
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.5rem;
+}
+
+.expert-card-social {
+  background: linear-gradient(
+    94deg,
+    #ffb629 -1.21%,
+    #ffda56 58.66%,
+    #ffd7a6 116.84%
+  );
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 1rem ;
+  position: absolute;
+  bottom: 15%;
+  right: 0;
+}
+
+.expert-card-social img {
+  width: 20px;
+}
 
 @media screen and (max-width: 600px) {
   html {
@@ -930,15 +1009,16 @@ button:active {
     width: auto;
   }
 
-  #why-choose{
+  #why-choose {
+    height: auto;
     flex-direction: column;
   }
 
-  .why-choose-left{
+  .why-choose-left {
     width: 100%;
   }
 
-  .why-choose-left div{
+  .why-choose-left div {
     height: 25rem;
     position: relative;
     top: 0;
@@ -946,19 +1026,21 @@ button:active {
     margin: 10px;
   }
 
-  .why-choose-left div img{
+  .why-choose-left div img {
     width: 50%;
     object-fit: cover;
     position: absolute;
     bottom: -10%;
   }
-  
-  .why-choose-right{
+
+  .why-choose-right {
     width: 100%;
     padding: 2rem 1rem;
   }
   .why-choose-text {
     width: 80%;
   }
-
+  .experts-container{
+    grid-template-columns: 1fr;
+  }
 }

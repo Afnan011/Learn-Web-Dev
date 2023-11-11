@@ -239,6 +239,7 @@ button:active {
   width: 70%;
   height: 75%;
   margin-top: 10px;
+  display: flex;
   justify-content: flex-start;
   align-items: flex-start;
   padding: 10px;

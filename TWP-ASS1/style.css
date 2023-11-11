@@ -491,7 +491,8 @@ button:active {
 
 .transport-card {
   height: 30rem;
-  width: 25rem;
+  width: 18vw;
+  
   background-position: center;
   background-blend-mode: multiply;
 

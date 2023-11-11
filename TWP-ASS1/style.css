@@ -250,6 +250,10 @@ button:active {
   width: 30%;
 }
 
+.service-content{
+  display: flex;
+}
+
 .service-content div {
   padding-left: 10px;
   text-align: left;
@@ -491,7 +495,8 @@ button:active {
 
 .transport-card {
   height: 30rem;
-  width: 25rem;
+  width: 18vw;
+  
   background-position: center;
   background-blend-mode: multiply;
 
@@ -1086,6 +1091,7 @@ button:active {
   .service-container {
     width: 100%;
     height: 90%;
+    display: flex;
     flex-direction: column;
     justify-content: center;
     gap: 3rem;
@@ -1100,13 +1106,26 @@ button:active {
     margin-bottom: 5px;
   }
 
+  .service-content{
+    flex-direction: column;
+    width: 90%;
+  }
+
   .service-content-container {
     width: 90vw;
     align-items: flex-start;
+    gap: 0;
   }
 
+  .service-content-container2{
+    gap: 0;
+  }
+  .service-content-text{
+    margin-bottom: 2rem;
+  }
   .service-content div {
     width: 100%;
+    padding: 0.5rem;
   }
 
   #why-us {

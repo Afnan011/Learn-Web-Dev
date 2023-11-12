@@ -979,7 +979,7 @@ button:active {
 
 #contact textarea {
   resize: none;
-  width: 94%;
+  width: 94.38%;
   height: 11rem;
 }
 
@@ -1068,7 +1068,7 @@ button:active {
   line-height: normal;
 }
 
-.blog-container{
+.blog-container {
   /* border-top: 1px solid #D6D6D6;
   border-bottom: 1px solid #D6D6D6; */
   position: relative;
@@ -1076,22 +1076,22 @@ button:active {
 
 .blog-container::before {
   content: "";
-  background: #D6D6D6;
+  background: #d6d6d6;
   position: absolute;
   top: 0;
   right: 0;
   height: 1px;
-  width: 75%
+  width: 75%;
 }
 
 .blog-container:after {
   content: "";
-  background: #D6D6D6;
+  background: #d6d6d6;
   position: absolute;
   bottom: 0;
   right: 0;
   height: 1px;
-  width: 75%
+  width: 75%;
 }
 
 .blog-card {
@@ -1099,12 +1099,45 @@ button:active {
   grid-template-columns: repeat(3, auto);
   grid-gap: 2rem;
   height: 33vh;
-  border-bottom: 1px solid #D6D6D6;
+  border-bottom: 1px solid #d6d6d6;
   margin-top: 2rem;
   overflow: hidden;
 }
 
-.blog-card:last-child{
+.blog-card:hover{
+  cursor: pointer;
+  transition: color 0.5s ease;
+}
+.blog-card:hover .blog-card-text h3 {
+  color: #ffbe34;
+
+}
+.blog-card:hover .blog-card-active {
+  display: flex;
+}
+
+.blog-img {
+  position: relative;
+}
+.blog-card-active {
+  width: 85%;
+  height: 50%;
+  background: rgba(28, 31, 53, 0.91);
+  position: absolute;
+  top: 5%;
+  left: 5%;
+  color: var(--color-white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.4rem;
+  display: none;
+}
+
+.blog-card:last-child {
   border: none;
 }
 
@@ -1113,7 +1146,7 @@ button:active {
   object-fit: cover;
 }
 
-.blog-calendar{
+.blog-calendar {
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -1124,7 +1157,7 @@ button:active {
   color: var(--color-text-heading);
   font-size: 3rem;
   font-style: normal;
-  font-weight: 900;
+  font-weight: 800;
 }
 
 .blog-calendar p {
@@ -1137,7 +1170,6 @@ button:active {
   width: 4rem;
 }
 
-
 .blog-card-text {
   height: fit-content;
   width: 75%;
@@ -1146,10 +1178,9 @@ button:active {
   align-items: flex-start;
   flex-direction: column;
   gap: 1rem;
-  border-left: 1px solid #D6D6D6;
+  border-left: 1px solid #d6d6d6;
   padding-left: 1rem;
 }
-
 
 .blog-card-text h3 {
   color: var(--color-text-heading);
@@ -1166,12 +1197,16 @@ button:active {
   line-height: 1.5rem;
 }
 
-.blog-card-text ul{
+.blog-card-text ul {
   margin-left: 2.5rem;
 }
 
-.blog-card2 img{
+.blog-card2 img {
   margin-right: -1.79rem;
+}
+
+.blog-calendar img {
+  margin: 0;
 }
 
 .blog-card-text ul li {
@@ -1188,6 +1223,23 @@ button:active {
   color: var(--color-white);
   width: 15rem;
   margin: 1rem;
+}
+
+footer {
+  min-height: 110vh;
+}
+
+.footer-top-bg {
+  background: url(./imgs/header-imgs/nav-bg.jpg);
+  background-position: center;
+  background-size: cover;
+  height: 45vh;
+}
+
+.footer-text-container {
+  height: 65vh;
+  background: var(--color-primary);
+  color: var(--color-white);
 }
 
 @media screen and (max-width: 768px) {
@@ -1446,41 +1498,41 @@ button:active {
     height: 25rem;
   }
 
-  .blog-parent{
+  .blog-parent {
     width: 90%;
   }
 
-  .blog-card{
+  .blog-card {
     grid-template-columns: 1fr;
     height: auto;
     margin: 2rem;
     border: none;
   }
 
-  .blog-card-text{
+  .blog-card-text {
     border: none;
     margin: auto;
     width: 80%;
     text-align: left;
   }
 
-  .blog-card-text p{
+  .blog-card-text p {
     text-align: justify;
   }
 
-  .blog-card img:not(.blog-calendar img){
+  .blog-card img:not(.blog-calendar img) {
     height: 70%;
   }
-  
-  .blog-calendar{
+
+  .blog-calendar {
     margin: auto;
     margin-top: -25%;
     align-items: flex-start;
   }
 
-  .blog-container::before, .blog-container:after{
+  .blog-container::before,
+  .blog-container:after {
     width: 0;
     height: 0;
   }
-
 }

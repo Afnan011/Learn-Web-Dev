@@ -1459,7 +1459,13 @@ button:active {
 
   .blog-card-text{
     border: none;
-    /* margin: auto; */
+    margin: auto;
+    width: 80%;
+    text-align: left;
+  }
+
+  .blog-card-text p{
+    text-align: justify;
   }
 
   .blog-card img:not(.blog-calendar img){
@@ -1467,8 +1473,14 @@ button:active {
   }
   
   .blog-calendar{
-    /* margin: auto; */
+    margin: auto;
     margin-top: -25%;
     align-items: flex-start;
   }
+
+  .blog-container::before, .blog-container:after{
+    width: 0;
+    height: 0;
+  }
+
 }

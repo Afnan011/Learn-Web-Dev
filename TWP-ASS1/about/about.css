@@ -386,4 +386,26 @@ button:active {
     .hero .sub-heading-below {
       width: 90%;
     }
+
+    #about-us{
+        flex-direction: column;
+        margin: 2rem;
+    }
+
+    .about-img-container{
+        width: auto;
+    }
+
+    .about-img-container div {
+        width: 100%;
+        height: 35vh;
+    }
+
+    .about-img-container div img{
+        display: none;
+    }
+
+    .about-text-container{
+        width: 90%;
+    }
 }  

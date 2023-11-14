@@ -1426,9 +1426,14 @@ footer {
 
   nav {
     flex-direction: column;
-    gap: 0.5rem;
-    padding: 0.5rem;
+
   }
+
+  header nav ul li:not(.nav-line-verticle) {
+    height: 7vh;
+    width: auto;
+  }
+
 
   .first-nav {
     flex-direction: column;

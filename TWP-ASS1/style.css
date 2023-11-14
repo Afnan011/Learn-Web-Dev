@@ -167,17 +167,23 @@ header nav ul li:last-child {
   border: none;
 }
 
-.nav-social {
+.nav-social{
   gap: 2rem;
   align-items: center;
   justify-content: space-around;
   cursor: pointer;
 }
 
+.nav-social img{
+  filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(185deg)
+  brightness(106%) contrast(102%);
+  height: 1.3vw;
+}
+
 .nav-social div {
   display: block;
   background-color: var(--color-white);
-  padding: 2rem;
+  padding: 2.5rem;
   color: var(--color-primary);
   font-weight: bold;
   cursor: default;

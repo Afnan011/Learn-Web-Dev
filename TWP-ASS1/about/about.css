@@ -770,7 +770,6 @@ button:active {
   padding: 0.5rem 0;
 }
 
-
 .faq-content {
   width: 90%;
   color: var(--color-text-paragraph);
@@ -814,7 +813,7 @@ button:active {
   position: relative;
 }
 
-.faq-img-card{
+.faq-img-card {
   background: var(--color-primary);
   color: white;
   padding: 3rem;
@@ -846,17 +845,13 @@ button:active {
   width: 4.5rem;
 }
 
-.faq-img-card button{
+.faq-img-card button {
   color: var(--color-primary);
   background: url(../imgs/Button-Background.svg);
   background-size: cover;
   background-position: center;
   width: 45%;
   font-size: 1rem;
-}
-
-#test{
-  min-height: 100vh;
 }
 
 @media screen and (max-width: 768px) {
@@ -1002,5 +997,34 @@ button:active {
     width: 80%;
     height: 60vh;
     margin: auto;
+  }
+
+  #faq {
+    padding: 4rem;
+    flex-direction: column-reverse;
+  }
+
+  .faq-text-container {
+    margin-top: 15vh;
+    width: 100%;
+    gap: 2rem;
+  }
+
+  .faq-accordian li {
+    padding: 1.2rem;
+  }
+
+  .faq-img-container {
+    width: 90%;
+    height: 40vh;
+  }
+
+  .faq-img-card {
+    top: auto;
+    bottom: -35%;
+    left: -7%;
+    width: 85%;
+    height: 30vh;
+    padding: 2rem;
   }
 }

@@ -905,17 +905,6 @@ button:active {
 }
 
 
-footer {
-  min-height: 110vh;
-}
-
-.footer-top-bg {
-  background: url(../imgs/header-imgs/nav-bg.jpg);
-  background-position: center;
-  background-size: cover;
-  height: 45vh;
-}
-
 .footer-text-container {
   height: 65vh;
   background: var(--color-primary);
@@ -1291,10 +1280,6 @@ footer button {
     height: 15rem;
   }
 
-  footer {
-    min-height: auto;
-  }
-
   .footer-top-bg {
     height: 40vh;
   }
@@ -1359,11 +1344,19 @@ footer button {
   .footer-subscribe-bottom {
     justify-content: space-between;
     gap: 3rem;
+    width: 60%;
   }
 
   .footer-bottom {
     flex-direction: column;
+    width: 100%;
   }
+
+  .footer-subscribe-icons img {
+    width: 30%;
+  }
+
+
   .footer-bottom p {
     padding: 1rem;
   }

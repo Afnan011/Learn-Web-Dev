@@ -1796,6 +1796,7 @@ footer {
 
   .footer-bottom {
     flex-direction: column;
+    width: 100%;
   }
   .footer-bottom p {
     padding: 1rem;

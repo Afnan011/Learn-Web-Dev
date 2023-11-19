@@ -780,6 +780,13 @@ button:active {
   text-align: justify;
 }
 
+#faq button {
+  color: var(--color-primary);
+  background: url(../imgs/Button-Background.svg);
+  background-size: cover;
+  background-position: center;
+}
+
 .faq-accordian li label span {
   transform: scale(1.5);
 }

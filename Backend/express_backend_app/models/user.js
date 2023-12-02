@@ -9,7 +9,8 @@ const userSchema = new mongoose.Schema({
 
     rollNo : {
         type: String,
-        required: true
+        required: true,
+        unique:true
     },
 
     whichClass : {

@@ -47,8 +47,39 @@ router.patch("/:id", async(req, res) => {
     } 
 })
 
+
+router.delete('/:id', async(req, res) => {
+  try{
+    const user = await User.findById(req.params.id).deleteOne()
+    if(user.deletedCount != 0) 
+      res.send("User deleted")
+    else
+      res.send("No user found")
+
+  }catch(err){
+    console.log("ERROR: " + err);
+  }
+})
+
+router.put('/:id', async(req, res) => {
+  try{
+    const user = await User.findByIdAndUpdate(req.params.id, {
+      whichClass: req.body.whichClass
+      
+    })
+
+    const user1 = await user.save()
+
+
+
+  }catch(err){
+    console.log("ERROR: " + err)
+  }
+})
+
+
 router.get("/new", (req, res) => {
   res.send("Add new User");
 });
 
-module.exports = router;
+module.exports = router

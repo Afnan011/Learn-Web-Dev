@@ -4,8 +4,21 @@
     box-sizing: border-box;
 }
 
+.parent{
+    scroll-snap-type: y mandatory;
+    max-height: 100vh;
+    overflow: scroll;
+}
+
 .box{
     padding: 3rem;
+    margin: 1rem;
+    background-color: darkgoldenrod;
+    min-height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    scroll-snap-align: center;
 }
 
 

@@ -18,6 +18,8 @@ app.use("/user", userRouter);
 
 
 mongoose.connect(url)
+
+
 const con = mongoose.connection;
 con.on('open', () => {
   console.log("Connected");

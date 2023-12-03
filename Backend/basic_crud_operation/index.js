@@ -20,8 +20,7 @@ app.use(express.json())
 app.use(cors())
 
 app.get('/', (req, res) => {
-    res.send("Hello")
-    console.log("Hello")
+    res.status(200).send("home page")
 })
 
 app.use('/user', userRoute)

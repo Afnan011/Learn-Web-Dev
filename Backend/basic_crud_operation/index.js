@@ -20,7 +20,7 @@ app.use(express.json())
 app.use(cors())
 
 app.get('/', (req, res) => {
-    res.status(200).send("home page")
+    res.sendFile('view/index.html', { root : __dirname})
 })
 
 app.use('/user', userRoute)

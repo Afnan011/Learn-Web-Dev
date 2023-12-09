@@ -3,6 +3,7 @@ const express = require('express')
 const mongoose = require('mongoose')
 const cors = require('cors')
 const userRoute = require('./routes/userRoute')
+const festRoute = require('./routes/festRoute')
 
 const app = express()
 
@@ -24,6 +25,8 @@ app.get('/', (req, res) => {
 })
 
 app.use('/user', userRoute)
+
+app.use('/fest', festRoute)
 
 app.listen(port, () => {
     console.log(`App is running on port ${port}`);

@@ -15,8 +15,7 @@ const userSchema = new mongoose.Schema(
       max: 255,
     },
     isUG: {
-      type:Boolean,
-      required: true,
+      type: Boolean,
       default:true
   },
     password: {

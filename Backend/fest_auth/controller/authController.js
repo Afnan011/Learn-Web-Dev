@@ -30,28 +30,35 @@ const signUpUser = async (req, res) => {
   const userObject = new User({
     name: req.body.name,
     email: req.body.email,
+    isUG: req.body.isUG,
     password,
   });
 
   const newTeam = new Team(
     {
+      teamName: "not defined",
       collegeName: userObject.name,
       email: userObject.email,
-      isUG: userObject.isUG
+      isUG: userObject.isUG,
     }
   );
 
-  // const festOb = Fest
-
   try {
     const savedUser = await userObject.save();
-    if(savedTeam.isUG){
-
+    if(savedUser.isUG) {
+      const UGTeam = await newTeam.save();
+      console.log(UGTeam);
     }
-    const savedTeam = await newTeam.save();
-  22  res.json({ error: null, data: savedUser._id, collegeName: savedTeam.collegeName});
+    else{
+      const PGTeam = await newTeam.save();
+      console.log(PGTeam);
+    }
+
+    res.json({ error: null, data: savedUser._id, isUG: savedUser.isUG });
   } catch (err) {
-    res.status(400).json({ error });
+    res.status(400).json({ err });
+    console.log("something went wrong");
+    console.log(err);
   }
 };
 

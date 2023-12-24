@@ -5,8 +5,7 @@ const cors = require('cors')
 
 const userRoute = require('./routes/userRoute')
 const authRoute = require('./routes/auth')
-const eventRoute = require('./routes/events')
-const teamRoute = require('./routes/teams')
+const teamRoute = require('./routes/teamsRoute')
 
 const app = express()
 
@@ -29,7 +28,6 @@ app.get('/', (req, res) => {
 
 app.use('/user', userRoute)
 app.use('/auth', authRoute)
-app.use('/event', eventRoute)
 app.use('/team', teamRoute)
 
 app.listen(port, () => {

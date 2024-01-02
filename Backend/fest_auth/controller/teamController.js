@@ -1,8 +1,14 @@
 const Team = require('../model/team');
 
 const getTeams = async(req, res) => {
-    const teams = await Team.find();
-    res.json(teams);
+    try{
+      const teams = await Team.find();
+      res.status(200).json(teams);  
+    }
+    catch (err) {
+        console.log("ERROR: " + err);
+        res.status(500).json({ message: err.message });
+      }
 }
 
 const getTeamById = async (req, res) => {

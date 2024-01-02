@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../js/signup.js" defer></script>
+</head>
+<body>
+    
+    <h2>SingUp Page</h2>
+
+    <form name="signUpForm" method="post" onsubmit="return false">
+        <input type="text" name="name" placeholder="collegeName" required><br>
+        <input type="text" name="email" placeholder="email" ><br>
+        <input type="password" name="password" placeholder="password"><br>
+        <div>
+            <input type="radio" name="isUg" value=true id="ugRadio">
+            <label for="ugRadio">UG</label>
+            <input type="radio" name="isUg" value=false id="pgRadio">
+            <label for="pgRadio">PG</label>
+        </div>
+        <input type="submit" value="Submit" id="submitBtn">
+    </form>
+</body>
+</html>

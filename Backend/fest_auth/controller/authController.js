@@ -2,11 +2,13 @@ const User = require("../model/user");
 const Team = require('../model/team')
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
+const sendConfirmationMail = require('../controller/nodeMailer')
 
 const {
   registerValidation,
   loginValidation,
 } = require("../middleware/validation");
+const { getTeamById } = require("./teamController");
 
 const signUpUser = async (req, res) => {
   //validate user {name, email, password}
@@ -54,6 +56,8 @@ const signUpUser = async (req, res) => {
       console.log(PGTeam);
     }
 
+    sendConfirmationMail(email);
+
     res.json({ error: null, data: savedUser._id, isUG: savedUser.isUG });
   } catch (err) {
     res.status(400).json({ err });
@@ -61,6 +65,17 @@ const signUpUser = async (req, res) => {
     console.log(err);
   }
 };
+
+const getTeamId = async(email) => {
+  try{
+    const team = await Team.findOne({email: email});
+    return team._id;
+  }
+  catch (err) {
+      console.log("ERROR: " + err);
+      return res.status(500).json({ message: err.message });
+    }
+}
 
 const loginUser = async (req, res) => {
   //validate user {email, password}
@@ -72,19 +87,22 @@ const loginUser = async (req, res) => {
 
   //check user exists
   const user = await User.findOne({ email: req.body.email });
-
+  
   if (!user) {
     return res.status(400).json({ error: "user does not exist" });
   }
-
+  
   //check the password for correctness
   const validPassword = await bcrypt.compare(req.body.password, user.password);
-
+  
   //if password does not match throw an error
   if (!validPassword) {
     return res.status(400).json({ error: "wrong password" });
   }
 
+  //get the teamID of the user
+  const teamId = await getTeamId(req.body.email);
+  
   //create auth token with username and ID
   const token = jwt.sign(
     {
@@ -101,7 +119,10 @@ const loginUser = async (req, res) => {
   res.header("auth-token", token).json({
     error: null,
     data: { token },
+    teamId: teamId
   });
 };
+
+
 
 module.exports = { signUpUser, loginUser };

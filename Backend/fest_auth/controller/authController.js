@@ -1,8 +1,8 @@
 const User = require("../model/user");
-const Team = require('../model/team')
+const Team = require("../model/team");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
-const sendConfirmationMail = require('../controller/nodeMailer')
+const { sendConfirmationEmail } = require("../email/registationConfirmation");
 
 const {
   registerValidation,
@@ -21,9 +21,9 @@ const signUpUser = async (req, res) => {
   //check user exists
   const emailExist = await User.findOne({ email: req.body.email });
 
-  if (emailExist) {
-    return res.status(400).json({ error: "User already exist" });
-  }
+  // if (emailExist) {
+  //   return res.status(400).json({ error: "User already exist" });
+  // }
 
   //encrypt password
   const password = await bcrypt.hash(req.body.password, 10);
@@ -36,27 +36,24 @@ const signUpUser = async (req, res) => {
     password,
   });
 
-  const newTeam = new Team(
-    {
-      teamName: "not defined",
-      collegeName: userObject.name,
-      email: userObject.email,
-      isUG: userObject.isUG,
-    }
-  );
+  const newTeam = new Team({
+    teamName: "not defined",
+    collegeName: userObject.name,
+    email: userObject.email,
+    isUG: userObject.isUG,
+  });
 
   try {
     const savedUser = await userObject.save();
-    if(savedUser.isUG) {
+    if (savedUser.isUG) {
       const UGTeam = await newTeam.save();
       console.log(UGTeam);
-    }
-    else{
+    } else {
       const PGTeam = await newTeam.save();
       console.log(PGTeam);
     }
 
-    sendConfirmationMail(email);
+    sendConfirmationEmail(newTeam.email, newTeam.collegeName);
 
     res.json({ error: null, data: savedUser._id, isUG: savedUser.isUG });
   } catch (err) {
@@ -64,18 +61,21 @@ const signUpUser = async (req, res) => {
     console.log("something went wrong");
     console.log(err);
   }
+
+  
+
+
 };
 
-const getTeamId = async(email) => {
-  try{
-    const team = await Team.findOne({email: email});
+const getTeamId = async (email) => {
+  try {
+    const team = await Team.findOne({ email: email });
     return team._id;
+  } catch (err) {
+    console.log("ERROR: " + err);
+    return res.status(500).json({ message: err.message });
   }
-  catch (err) {
-      console.log("ERROR: " + err);
-      return res.status(500).json({ message: err.message });
-    }
-}
+};
 
 const loginUser = async (req, res) => {
   //validate user {email, password}
@@ -87,14 +87,14 @@ const loginUser = async (req, res) => {
 
   //check user exists
   const user = await User.findOne({ email: req.body.email });
-  
+
   if (!user) {
     return res.status(400).json({ error: "user does not exist" });
   }
-  
+
   //check the password for correctness
   const validPassword = await bcrypt.compare(req.body.password, user.password);
-  
+
   //if password does not match throw an error
   if (!validPassword) {
     return res.status(400).json({ error: "wrong password" });
@@ -102,7 +102,7 @@ const loginUser = async (req, res) => {
 
   //get the teamID of the user
   const teamId = await getTeamId(req.body.email);
-  
+
   //create auth token with username and ID
   const token = jwt.sign(
     {
@@ -119,10 +119,8 @@ const loginUser = async (req, res) => {
   res.header("auth-token", token).json({
     error: null,
     data: { token },
-    teamId: teamId
+    teamId: teamId,
   });
 };
-
-
 
 module.exports = { signUpUser, loginUser };

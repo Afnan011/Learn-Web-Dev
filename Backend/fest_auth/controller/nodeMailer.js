@@ -15,8 +15,8 @@ const sendConfirmationMail = async(email) => {
     const htmlPage = await fs.readFileSync('../views/mailTemplate.html', 'utf8');
     // send mail with defined transport object
     const info = await transporter.sendMail({
-      from: 'info@aantarya.tech', // sender address
-      to: email, // list of receivers
+      from: 'noreply@aantarya.tech', // sender address
+      to: 'muhammedafnan8184@gmail.com', // list of receivers
       subject: "Hello ✔", // Subject line
       text: "Hello world?", // plain text body
       html: htmlPage

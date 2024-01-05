@@ -76,13 +76,16 @@ nav ul li a{
     text-decoration: none;
     padding: 0.5rem 1.5rem;
     color: white;
+    background: #050f1d;
+    border-radius: 0.5rem;
+    transition: background 0.3s ease-out;
 }
 
 nav ul li a:hover{
     color: #050f1d;
     background: white;
-    transition: background 0.5s ease-in-out;
-    border-radius: 0.5rem;
+    transition: background 0.3s ease-in;
+    
 }
 
 .menu-bar{

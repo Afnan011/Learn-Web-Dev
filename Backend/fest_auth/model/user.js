@@ -24,6 +24,12 @@ const userSchema = new mongoose.Schema(
       min: 5,
       max: 255,
     },
+    backup: {
+      type: String,
+      min: 5,
+      max: 255,
+    },
+
   },
   {
     timestamps: true,

@@ -1,4 +1,6 @@
-// const URL = "http://localhost:3000";
+const URL = "http://localhost:3000";
+// const URL = "http://mca-fest.onrender.com";
+
 
 console.log('login.js');
 
@@ -23,7 +25,7 @@ console.log(loginBtn);
     const isPosted = await postData(email, password);
 
     if(isPosted){
-        window.location.href = "/home";
+        window.location.href = "/pages/home.html";
     }
 });
 

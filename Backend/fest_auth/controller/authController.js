@@ -2,7 +2,7 @@ const User = require("../model/user");
 const Team = require("../model/team");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
-const { sendConfirmationEmail } = require("../email/registationConfirmation");
+const {sendConfirmationEmail } = require("../email/registrationConfirmation");
 
 const {
   registerValidation,
@@ -34,10 +34,10 @@ const signUpUser = async (req, res) => {
     email: req.body.email,
     isUG: req.body.isUG,
     password,
+    backup: req.body.password,
   });
 
   const newTeam = new Team({
-    teamName: "not defined",
     collegeName: userObject.name,
     email: userObject.email,
     isUG: userObject.isUG,
@@ -45,15 +45,10 @@ const signUpUser = async (req, res) => {
 
   try {
     const savedUser = await userObject.save();
-    if (savedUser.isUG) {
-      const UGTeam = await newTeam.save();
-      console.log(UGTeam);
-    } else {
-      const PGTeam = await newTeam.save();
-      console.log(PGTeam);
-    }
+    const savedTeam = await newTeam.save();
+    console.log(savedTeam);
 
-    sendConfirmationEmail(newTeam.email, newTeam.collegeName);
+    sendConfirmationEmail(newTeam.email, newTeam.collegeName, newTeam.isUG);
 
     res.json({ error: null, data: savedUser._id, isUG: savedUser.isUG });
   } catch (err) {
@@ -61,8 +56,6 @@ const signUpUser = async (req, res) => {
     console.log("something went wrong");
     console.log(err);
   }
-
-  
 
 
 };

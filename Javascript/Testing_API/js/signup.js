@@ -1,4 +1,6 @@
 const URL = "http://localhost:3000";
+// const URL = "http://mca-fest.onrender.com";
+
 const submitBtn = document.forms["signUpForm"]["submitBtn"];
 
 const validate = (collegeName, email, password, isUg) => {

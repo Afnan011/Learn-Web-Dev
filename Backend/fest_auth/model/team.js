@@ -15,7 +15,7 @@ const teamSchema = new mongoose.Schema(
     },
     teamName:{
         type: String,
-        default: "not assigned"
+        default: "guest"
     },
     isUG: {
         type:Boolean,
@@ -33,7 +33,10 @@ const teamSchema = new mongoose.Schema(
       countOfGirls: Number,
     },
     paymentStatus: {
-      verificationStatus: Boolean,
+      verificationStatus: {
+        type: Boolean,
+        default: false
+      },
       transactionId: String,
       screenshot: String,
     },

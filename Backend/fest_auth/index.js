@@ -8,6 +8,9 @@ const authRoute = require('./routes/auth')
 const teamRoute = require('./routes/teamsRoute')
 
 const app = express()
+app.use(express.json())
+app.use(cors())
+// app.set('view engine', 'hbs');
 
 const url = process.env.mongodbURL
 const port = process.env.PORT || 3000
@@ -19,9 +22,6 @@ con.on('open', () => {
     console.log("connected");
 })
 
-app.use(express.json())
-app.use(cors())
-
 
 app.get('/', (req, res) => {
     res.status(200).json({message:"Home Route"})
@@ -30,6 +30,7 @@ app.get('/', (req, res) => {
 app.use('/user', userRoute)
 app.use('/auth', authRoute)
 app.use('/team', teamRoute)
+
 
 app.listen(port, () => {
     console.log(`App is running on port ${port}`);

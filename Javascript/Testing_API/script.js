@@ -85,7 +85,7 @@ window.onpopstate = handleLocation;
 window.route = route;
 
 // Initial page load
-handleLocation();
+// handleLocation();
 
 
 

@@ -32,7 +32,7 @@ const sendConfirmationEmail = (recipientEmail, collegeName, isUG) => {
   const senderName = 'Aantarya 2k24'
   const senderEmail = '<noreply@aantarya.tech>'
 
-  const sender = `${senderName} '${senderEmail}'`
+  const sender = `${senderName} ${senderEmail}`
 
   isUG = isUG ? "UG" : "PG";
 

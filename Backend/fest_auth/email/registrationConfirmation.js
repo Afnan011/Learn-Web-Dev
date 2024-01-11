@@ -12,6 +12,15 @@ const transporter = nodemailer.createTransport({
     },
   });
 
+// const transporter = nodemailer.createTransport({
+//     host: "smtp.mailgun.org",
+//     port: 587,
+//     auth: {
+//       user: "postmaster@sandbox34524b430d974a658dbbea4015ad4991.mailgun.org",
+//       pass: "3ad62010d96ce09a902dd9f2206d9fa3-7ecaf6b5-90c21a6c",
+//     },
+//   });
+
 
 const handlebarOptions = {
   viewEngine: {

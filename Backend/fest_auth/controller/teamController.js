@@ -1,9 +1,6 @@
-const crypto = require("crypto");
-
-var ImageKit = require("imagekit");
-var fs = require('fs');
-
+const ImageKit = require("imagekit");
 const Team = require("../model/team");
+
 
 const getTeams = async (req, res) => {
   try {

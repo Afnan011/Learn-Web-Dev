@@ -21,9 +21,9 @@ const signUpUser = async (req, res) => {
   //check user exists
   const emailExist = await User.findOne({ email: req.body.email });
 
-  // if (emailExist) {
-  //   return res.status(400).json({ error: "User already exist" });
-  // }
+  if (emailExist) {
+    return res.status(400).json({ error: "User already exist" });
+  }
 
   //encrypt password
   const password = await bcrypt.hash(req.body.password, 10);
@@ -48,7 +48,7 @@ const signUpUser = async (req, res) => {
     const savedTeam = await newTeam.save();
     console.log(savedTeam);
 
-    sendConfirmationEmail(newTeam.email, newTeam.collegeName, newTeam.isUG);
+    // sendConfirmationEmail(newTeam.email, newTeam.collegeName, newTeam.isUG);
 
     res.json({ error: null, data: savedUser._id, isUG: savedUser.isUG });
   } catch (err) {

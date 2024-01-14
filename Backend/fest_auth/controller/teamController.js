@@ -1,7 +1,6 @@
 const ImageKit = require("imagekit");
 const Team = require("../model/team");
 
-
 const getTeams = async (req, res) => {
   try {
     const teams = await Team.find();
@@ -17,7 +16,7 @@ const getTeamById = async (req, res) => {
     const teamId = req.params.teamId;
     const team = await Team.findById(teamId);
     if (!team) {
-      res
+      return res
         .status(404)
         .json({ message: `cannot find Team with the ID ${teamId}` });
     }
@@ -33,7 +32,9 @@ const updateTeamById = async (req, res) => {
     const teamId = req.params.teamId;
     const team = await Team.findByIdAndUpdate(teamId, req.body);
     if (!team) {
-      return res.status(404).json({ message: `cannot find Team with the ID ${teamId}` });
+      return res
+        .status(404)
+        .json({ message: `cannot find Team with the ID ${teamId}` });
     }
 
     const updatedTeam = await Team.findById(teamId);
@@ -66,11 +67,11 @@ const verifyUpload = async (req, res) => {
   const privateKey = process.env.IMAGE_SERVER_TOKEN;
 
   const imagekit = new ImageKit({
-      publicKey : 'public_KYo+rOuJkO2Bf74Wbbr5RrBz8lE=',
-      privateKey : privateKey,
-      urlEndpoint : "https://ik.imagekit.io/afnan011/"
+    publicKey: "public_KYo+rOuJkO2Bf74Wbbr5RrBz8lE=",
+    privateKey: privateKey,
+    urlEndpoint: "https://ik.imagekit.io/afnan011/",
   });
-  
+
   const authParams = imagekit.getAuthenticationParameters();
   console.log(authParams);
 
@@ -78,11 +79,11 @@ const verifyUpload = async (req, res) => {
     const teamId = req.params.teamId;
     const team = await Team.findById(teamId);
     if (!team) {
-      res
+      return res
         .status(404)
         .json({ message: `cannot find Team with the ID ${teamId}` });
     }
-    
+
     res.json(authParams);
   } catch (err) {
     console.log("ERROR: " + err);

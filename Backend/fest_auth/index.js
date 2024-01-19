@@ -27,9 +27,12 @@ app.get('/', (req, res) => {
     res.status(200).json({message:"Home Route"})
 })
 
+app.use(express.static('views'))
+
 app.use('/user', userRoute)
 app.use('/auth', authRoute)
 app.use('/team', teamRoute)
+
 
 
 app.listen(port, () => {

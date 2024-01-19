@@ -6,7 +6,7 @@ const {getTeams, getTeamById, updateTeamById, clearEvents, verifyUpload} = requi
 router.get('/', getTeams);
 
 router.get('/download-schedule', (req, res) => {
-    res.download(path.join(__dirname, '../views/schedule.pdf'))
+    res.status(200).download(path.join(__dirname, '../views/schedule.pdf'))
 });
 
 router.get("/:teamId", getTeamById);

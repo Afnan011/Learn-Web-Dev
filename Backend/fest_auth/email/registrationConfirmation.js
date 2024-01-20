@@ -1,5 +1,4 @@
 const nodemailer = require("nodemailer");
-const fs = require('fs');
 const path = require('path');
 const hbs = require('nodemailer-express-handlebars');
 
@@ -71,5 +70,3 @@ const sendConfirmationEmail = (recipientEmail, collegeName, isUG) => {
 // sendConfirmationEmail('muhammedafnan8184@gmail.com', 'VCET', true)
 
 module.exports = { sendConfirmationEmail };
-
-// module.exports = {sendConfirmationMail}

@@ -1,5 +1,6 @@
 const ImageKit = require("imagekit");
 const Team = require("../model/team");
+const {sendPaymentEmail1} = require("../email/payment1");
 
 const getTeams = async (req, res) => {
   try {
@@ -83,7 +84,8 @@ const verifyUpload = async (req, res) => {
         .status(404)
         .json({ message: `cannot find Team with the ID ${teamId}` });
     }
-
+    const email = team.email;
+    console.log(email);     
     res.json(authParams);
   } catch (err) {
     console.log("ERROR: " + err);
@@ -91,10 +93,41 @@ const verifyUpload = async (req, res) => {
   }
 };
 
+
+const sendEmail1 = async(req, res) => {
+  try {
+    const teamId = req.params.teamId;
+    const team = await Team.findById(teamId);
+    if (!team) {
+      return res
+        .status(404)
+        .json({ message: `cannot find Team with the ID ${teamId}` });
+    }
+    const email = team.email;
+
+    // check the payment status
+    if(team.paymentStatus.verificationStatus) {
+      return res.status(400).json({ message: "Payment already done" });
+    }
+
+    if(team.paymentStatus.screenshot) {
+      return res.status(400).json({ message: "Payment Verification is pending" });
+    }
+
+    sendPaymentEmail1(email);
+    res.json({message: 'Email sent'}).status(200);
+  } catch (err) {
+    console.log("ERROR: " + err);
+    res.status(500).json({ message: err.message });
+  }
+};
+
+
 module.exports = {
   getTeams,
   getTeamById,
   updateTeamById,
   clearEvents,
   verifyUpload,
+  sendEmail1
 };

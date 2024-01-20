@@ -107,7 +107,7 @@ const sendEmail1 = async(req, res) => {
 
     // check the payment status
     if(team.paymentStatus.verificationStatus) {
-      return res.status(400).json({ message: "Payment already done" });
+      return res.status(400).json({ message: "Payment already verified" });
     }
 
     if(team.paymentStatus.screenshot) {

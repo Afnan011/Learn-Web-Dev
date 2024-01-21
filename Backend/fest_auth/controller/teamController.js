@@ -104,7 +104,7 @@ const sendEmail1 = async(req, res) => {
         .json({ message: `cannot find Team with the ID ${teamId}` });
     }
     const email = team.email;
-
+    const teamName = team.teamName;
     // check the payment status
     if(team.paymentStatus.verificationStatus) {
       return res.status(400).json({ message: "Payment already verified" });
@@ -114,7 +114,7 @@ const sendEmail1 = async(req, res) => {
       return res.status(400).json({ message: "Payment Verification is pending" });
     }
 
-    sendPaymentEmail1(email);
+    sendPaymentEmail1(email, teamName);
     res.json({message: 'Email sent'}).status(200);
   } catch (err) {
     console.log("ERROR: " + err);

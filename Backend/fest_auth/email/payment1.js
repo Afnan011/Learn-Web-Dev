@@ -35,7 +35,7 @@ transporter.use('compile', hbs(handlebarOptions));
 
 
 
-const sendPaymentEmail1 = (recipientEmail) => {
+const sendPaymentEmail1 = (recipientEmail, teamName) => {
   
   const senderName = 'Aantarya 2k24'
   const senderEmail = '<noreply@aantarya.tech>'
@@ -47,7 +47,9 @@ const sendPaymentEmail1 = (recipientEmail) => {
     to: recipientEmail,
     subject: 'Payment - Aantarya 2k24',
     template: 'payment1',
-  
+    context: {
+      team_name: teamName,
+    }
   };
 
 
@@ -61,6 +63,6 @@ const sendPaymentEmail1 = (recipientEmail) => {
 };
 
 
-// sendPaymentEmail1('muhammedafnan8184@gmail.com')
+// sendPaymentEmail1('muhammedafnan8184@gmail.com', 'Bytecode')
 
 module.exports = { sendPaymentEmail1 };

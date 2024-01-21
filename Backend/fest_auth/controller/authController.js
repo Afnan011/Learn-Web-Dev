@@ -4,11 +4,82 @@ const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 const {sendConfirmationEmail } = require("../email/registrationConfirmation");
 
-const {
-  registerValidation,
-  loginValidation,
-} = require("../middleware/validation");
-const { getTeamById } = require("./teamController");
+const {registerValidation,loginValidation} = require("../middleware/validation");
+// const { getTeamById } = require("./teamController");
+
+let availableTamNamesList = [
+  "CodeSangam",
+  "PixelVibes",
+  "QuantumCraft",
+  "ByteQuest",
+  "CyberWave",
+  "DataRhythm",
+  "LogicPulse",
+  "ByteFusion",
+  "PixelNexa",
+  "CyberGlow",
+  "DataSpark",
+  "QuantumNest",
+  "CodeSynergy",
+  "ByteBliss",
+  "CyberVertex",
+  "PixelEcho",
+  "DataPinnacle",
+  "TechTraverse",
+  "LogicStrive",
+  "CodePetal",
+  "CyberFlare",
+  "PixelVista",
+  "DataHorizon",
+  "TechIgnite",
+  "QuantumSpark",
+  "LogicVerve",
+  "CodeHarbor",
+  "ByteSynth",
+  "CyberNova",
+  "PixelHarmony",
+  "DataCatalyst",
+  "QuantumVortex",
+  "LogicRise",
+  "CodeEclipse",
+  "ByteDynamo",
+  "CyberCraze",
+  "PixelPioneer",
+  "DataMatrix",
+  "TechFusion",
+  "QuantumPulse",
+  "LogicLoom",
+  "ByteCrafter",
+  "PixelQuest",
+  "DataSynergy",
+  "TechHarbor",
+  "QuantumDive",
+  "LogicLink",
+  "CodeVista",
+  "CyberScape",
+  "TechPulse"
+];
+
+let assignedTeamNamesList = [];
+
+
+const getTeamName = () => {
+  if (availableTamNamesList.length === 0) {
+    console.error("No more unique team names available.");
+    return 'guest';
+  }
+
+  let randomIndex = Math.floor(Math.random() * availableTamNamesList.length);
+  let selectedTeamName = availableTamNamesList[randomIndex];
+
+
+  // Remove the selected name from the list to avoid duplication
+  availableTamNamesList.splice(randomIndex, 1);
+  assignedTeamNamesList.push(selectedTeamName);
+
+  return selectedTeamName;
+}
+
 
 const signUpUser = async (req, res) => {
   //validate user {name, email, password}
@@ -48,6 +119,7 @@ const signUpUser = async (req, res) => {
     collegeName: userObject.name,
     email: userObject.email,
     isUG: userObject.isUG,
+    teamName: getTeamName(),
   });
 
   try {

@@ -1,5 +1,4 @@
 const express = require("express");
-const path = require("path");
 const router = express.Router();
 const {getTeams, getTeamById, updateTeamById, clearEvents, verifyUpload, sendEmail1} = require("../controller/teamController");
 

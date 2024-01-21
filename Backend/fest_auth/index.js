@@ -6,6 +6,7 @@ const cors = require('cors')
 const userRoute = require('./routes/userRoute')
 const authRoute = require('./routes/auth')
 const teamRoute = require('./routes/teamsRoute')
+const adminRoute = require('./routes/adminRoute')
 
 const app = express()
 app.use(express.json())
@@ -32,7 +33,7 @@ app.use(express.static('views'))
 app.use('/user', userRoute)
 app.use('/auth', authRoute)
 app.use('/team', teamRoute)
-
+app.use('/admin', adminRoute)
 
 
 app.listen(port, () => {

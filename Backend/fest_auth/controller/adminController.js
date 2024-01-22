@@ -121,7 +121,6 @@ const getCodingMems = async (req, res) => {
   }
 };
 
-
 const getWebDesigningMems = async (req, res) => {
   const webDataUG = await Team.aggregate([
     { $match: { "events.web.name": { $ne: "N/A" }, "events.web.phone": { $ne: "N/A" } } },
@@ -215,8 +214,71 @@ const getWebDesigningMems = async (req, res) => {
 };
 
 
+const getItManagerMems = async (req, res) => {
+  const itManagerData = await Team.aggregate([
+    { $match: { "events.itManager.name": { $ne: "N/A" }, "events.itManager.phone": { $ne: "N/A" } } },
+    { $unwind: "$events.itManager" },
+    {
+      $project: {
+        _id: 0,
+        teamName: "$teamName",
+        name: "$events.itManager.name",
+        phone: "$events.itManager.phone",
+        isUG: "$isUG",
+      },
+    },
+    {
+      $group: {
+        _id: "$teamName",
+        members: { $push: { name: "$name", phone: "$phone" } },
+        isUG: { $first: "$isUG" },
+      },
+    },
+  ]);
+
+  try {
+    const browser = await puppeteer.launch({
+      headless: "new",
+    });
+
+    // Data
+    const page = await browser.newPage();
+    const html = generateHtmlForBoth(itManagerData, "PG", "IT Manager");
+    await page.setContent(html);
+    const pdfBuffer = await page.pdf({ format: "A4" });
 
 
+    // Close the browser
+    await browser.close();
+    res.setHeader("Content-Type", "application/pdf");
+    res.setHeader("Content-Disposition","inline; filename=it-manager-participants.pdf");
+    res.write(pdfBuffer);
+    res.end();
+
+  } catch (error) {
+    console.error(error);
+    res.status(500).send("Error generating PDF");
+  }
+
+};
+
+const getDesigningMems = async (req, res) => {};
+
+const getDumbCharadesMems = async (req, res) => {};
+
+const getPhotographyMems = async (req, res) => {};
+
+const getProductLaunchMems = async (req, res) => {};
+
+const getQuizMems = async (req, res) => {};
+
+const getDebateMems = async (req, res) => {};
+
+const getDanceMems = async (req, res) => {};
+
+const getGamingMems = async (req, res) => {};
+
+const getTreasureMems = async (req, res) => {};
 
 function generateHtml(data, category, event) {
   return `
@@ -276,5 +338,15 @@ module.exports = {
   adminRoute, 
   getAllTeams, 
   getCodingMems, 
-  getWebDesigningMems
+  getWebDesigningMems,
+  getItManagerMems,
+  getDesigningMems,
+  getDumbCharadesMems,
+  getPhotographyMems,
+  getProductLaunchMems,
+  getQuizMems,
+  getDebateMems,
+  getDanceMems,
+  getGamingMems,
+  getTreasureMems
 };

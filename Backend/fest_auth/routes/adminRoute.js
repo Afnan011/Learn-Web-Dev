@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const {adminRoute, getAllTeams} = require('../controller/adminController')
+const {adminRoute, getAllTeams, getCodingMems} = require('../controller/adminController')
 
 
 router.get('/', adminRoute);
@@ -8,7 +8,8 @@ router.get('/', adminRoute);
 
 router.get('/get-ids', getAllTeams);
 
-// router.get()
+router.get('/get-coding-mems', getCodingMems)
 
 
 module.exports = router;
+

@@ -49,18 +49,18 @@ router.get('/get-treasure-mems', getTreasureMems)
 module.exports = router;
 
 
-// coding: [seperate],
-// web: [seperate],
+// coding: [seperate], 2
+// web: [seperate], 2
+ 
+// itManager: [pg], 1
+// designing: [pg], 1
 
-// itManager: [pg],
-// designing: [pg],
+// dumbCharades: [ug], 2
 
-// dumbCharades: [ug],
-
-// photography: [combined],
-// productLaunch: [combined],
-// quiz: [combined],
-// debate: [combined],
-// dance: [combined],
-// gaming: [combined],
-// treasure: [combined],
+// photography: [combined], 1
+// productLaunch: [combined], 1
+// debate: [combined], 1
+// quiz: [combined], 2
+// dance: [combined], 5
+// gaming: [combined], 2
+// treasure: [combined], 2

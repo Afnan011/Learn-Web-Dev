@@ -223,15 +223,13 @@ const getItManagerMems = async (req, res) => {
         _id: 0,
         teamName: "$teamName",
         name: "$events.itManager.name",
-        phone: "$events.itManager.phone",
-        isUG: "$isUG",
+        phone: "$events.itManager.phone"
       },
     },
     {
       $group: {
         _id: "$teamName",
         members: { $push: { name: "$name", phone: "$phone" } },
-        isUG: { $first: "$isUG" },
       },
     },
   ]);
@@ -243,7 +241,7 @@ const getItManagerMems = async (req, res) => {
 
     // Data
     const page = await browser.newPage();
-    const html = generateHtmlForBoth(itManagerData, "PG", "IT Manager");
+    const html = generateHtml(itManagerData, "PG", "IT Manager");
     await page.setContent(html);
     const pdfBuffer = await page.pdf({ format: "A4" });
 

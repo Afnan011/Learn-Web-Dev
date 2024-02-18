@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import Header from '../components/Header'
-
+import '../styles/App.css';
 
 function App() {
 
@@ -19,21 +19,21 @@ function App() {
 
   const [quote, setQuote] = useState(quoteList[0]);
 
-  useEffect(() => {
-   console.log('use effect ran' + quote);
-  }, [quote]);
+  // useEffect(() => {
+  //  console.log('use effect ran' + quote);
+  // }, [quote]);
 
   function displayQuote(){
-    const quote = quoteList[Math.floor(Math.random() * quoteList.length)];;
+    const quote = quoteList[Math.floor(Math.random() * quoteList.length)];
     setQuote(quote);
   }
   return (
     <div>
-      <Header name= 'Afnan'/>
-      <h1>My First React App</h1>
-      <p>Welcome :)</p>
-      <p>{quote}</p>
-      <button onClick={displayQuote}>Get Quote</button>
+      <div className='quote-container'>
+        <Header name= 'Afnan'/>
+        <p className="quote">{quote}</p>
+        <button onClick={displayQuote}>Get Quote</button>
+      </div>
     </div>
   );
 }

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import data from "./constants/data";
 import { RotatingLines } from "react-loader-spinner";
-import logo from "./assets/logo.png";
+import logo from "../public/logo.png";
 import "./App.css";
 
 function App() {

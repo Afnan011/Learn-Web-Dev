@@ -15,6 +15,7 @@ body{
   align-items: center;
   justify-content: flex-start;
   max-height: 100vh;
+  max-height: 100svh;
 }
 
 .logo {

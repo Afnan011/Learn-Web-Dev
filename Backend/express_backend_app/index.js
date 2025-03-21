@@ -4,7 +4,7 @@ const mongoose = require('mongoose')
 const app = express();
 
 const port = 3000;
-const url = `mongodb+srv://afnan011:Afnan%40123@cluster0.7jypref.mongodb.net/?retryWrites=true&w=majority`;
+const url = MongoDBURL;
 
 app.use(express.json())
 
